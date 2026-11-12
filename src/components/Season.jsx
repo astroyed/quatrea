@@ -39,7 +39,7 @@ export default function Season({ index, onAdd }) {
         <h2 className="serif">{s.name}, eau de parfum</h2>
         <div className="sz">{SIZES.map(([ml], k) => <button key={ml} className={k === size ? 'on' : ''} onClick={() => setSize(k)}>{ml} ml</button>)}</div>
         <p className="serif" style={{ fontSize: '2rem', marginBottom: '1.5rem' }}>${SIZES[size][1]}</p>
-        <button className="btn" onClick={onAdd}>Add to bag</button>
+        <button className="btn" onClick={() => onAdd(s.id, size)}>Add to bag</button>
       </div>
       <a className="next" href={'#' + next.id} style={{ background: next.colors.bg, color: next.colors.ink }}><p>Next season</p><h2 className="serif">{next.name}</h2></a>
       <footer><span className="serif" style={{ fontSize: '1.6rem' }}>

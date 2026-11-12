@@ -3,6 +3,7 @@ import { SEASONS, ATELIER } from '../data'
 import { useFrame } from '../hooks'
 import { snapTo } from '../engine'
 import RevealText from './RevealText'
+import Logo from './Logo'
 
 export default function Atelier() {
   const ring = useRef(null)
@@ -17,5 +18,9 @@ export default function Atelier() {
       </svg>
       <RevealText className="serif" style={{ fontSize: 'clamp(1.6rem,3.4vw,2.6rem)', lineHeight: 1.3 }} text={ATELIER} />
     </div></div>
-    <footer><span className="serif" style={{ fontSize: '1.6rem' }}>QUATREA</span><span>Four perfumes. One year. Composed in small batches.</span></footer></section>)
+     <footer><span className="serif" style={{ fontSize: '1.6rem' }}>
+            <Logo />
+            </span><span>Four perfumes. One year. Composed in small batches.</span>
+          </footer>
+    </section>)
 }

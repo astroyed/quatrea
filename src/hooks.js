@@ -11,7 +11,7 @@ export function useInView(th = .6) { // [ref, seen] – seen turns true once vis
   useEffect(() => { const io = new IntersectionObserver(([e]) => e.isIntersecting && set(true), { threshold: th }); io.observe(ref.current); return () => io.disconnect() }, [th])
   return [ref, seen]
 }
-export const PAGES = ['home', ...SEASONS.map(s => s.id), 'atelier']
+export const PAGES = ['home', ...SEASONS.map(s => s.id), 'atelier', 'bag']
 const valid = () => { const h = location.hash.slice(1); return PAGES.includes(h) ? h : 'home' }
 
 // Hash routing with a circular colour wipe starting where the user clicked.
